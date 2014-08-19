@@ -17,7 +17,6 @@ package org.datanucleus.test;
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
-import org.datanucleus.samples.QSample;
 import org.datanucleus.samples.Sample;
 import org.junit.Assert;
 import org.junit.Test;
@@ -42,7 +41,7 @@ public class SimpleTest {
         Phonenumber.PhoneNumber number = PhoneNumberUtil.getInstance().parse("+1-123-456-7890", null);
         Transaction tx = pm.currentTransaction();
         tx.begin();
-        Sample sample = new Sample(1, number, number, number, number);
+        Sample sample = new Sample(1, number, number, number);
         pm.makePersistent(sample);
         tx.commit();
 
@@ -59,7 +58,6 @@ public class SimpleTest {
         pm.close();
 
         Assert.assertEquals(number, returned.getInternationalPhone());
-        Assert.assertEquals(number, returned.getNationalPhone());
         Assert.assertEquals(number, returned.getE164Phone());
         Assert.assertEquals(number, returned.getRfc3966Phone());
     }

@@ -36,10 +36,6 @@ public class Sample {
     Phonenumber.PhoneNumber internationalPhone;
 
     @Persistent(defaultFetchGroup = "true")
-    @Extension(vendorName = "datanucleus", key = "type-converter-name", value = "libphonenumber-national")
-    Phonenumber.PhoneNumber nationalPhone;
-
-    @Persistent(defaultFetchGroup = "true")
     @Extension(vendorName = "datanucleus", key = "type-converter-name", value = "libphonenumber-e164")
     Phonenumber.PhoneNumber e164Phone;
 
@@ -47,10 +43,9 @@ public class Sample {
     @Extension(vendorName = "datanucleus", key = "type-converter-name", value = "libphonenumber-rfc3966")
     Phonenumber.PhoneNumber rfc3966Phone;
 
-    public Sample(long id, Phonenumber.PhoneNumber internationalPhone, Phonenumber.PhoneNumber nationalPhone, Phonenumber.PhoneNumber e164Phone, Phonenumber.PhoneNumber rfc3966Phone) {
+    public Sample(long id, Phonenumber.PhoneNumber internationalPhone, Phonenumber.PhoneNumber e164Phone, Phonenumber.PhoneNumber rfc3966Phone) {
         this.id = id;
         this.internationalPhone = internationalPhone;
-        this.nationalPhone = nationalPhone;
         this.e164Phone = e164Phone;
         this.rfc3966Phone = rfc3966Phone;
     }
@@ -61,10 +56,6 @@ public class Sample {
 
     public Phonenumber.PhoneNumber getInternationalPhone() {
         return internationalPhone;
-    }
-
-    public Phonenumber.PhoneNumber getNationalPhone() {
-        return nationalPhone;
     }
 
     public Phonenumber.PhoneNumber getE164Phone() {
