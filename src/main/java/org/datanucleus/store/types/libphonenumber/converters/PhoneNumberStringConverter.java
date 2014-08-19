@@ -46,7 +46,7 @@ public abstract class PhoneNumberStringConverter implements TypeConverter<Phonen
 
     @Override
     public String toDatastoreType(Phonenumber.PhoneNumber value) {
-        return PHONE_NUMBER_UTIL.format(value, format);
+        return value == null ? null : PHONE_NUMBER_UTIL.format(value, format);
     }
 
     @Override

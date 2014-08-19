@@ -41,7 +41,7 @@ public class SimpleTest {
         Phonenumber.PhoneNumber number = PhoneNumberUtil.getInstance().parse("+1-123-456-7890", null);
         Transaction tx = pm.currentTransaction();
         tx.begin();
-        Sample sample = new Sample(1, number, number, number);
+        Sample sample = new Sample(1, number, number, number, null);
         pm.makePersistent(sample);
         tx.commit();
 
@@ -60,5 +60,6 @@ public class SimpleTest {
         Assert.assertEquals(number, returned.getInternationalPhone());
         Assert.assertEquals(number, returned.getE164Phone());
         Assert.assertEquals(number, returned.getRfc3966Phone());
+        Assert.assertNull(returned.getOtherPhone());
     }
 }

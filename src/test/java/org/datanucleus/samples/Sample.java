@@ -43,11 +43,16 @@ public class Sample {
     @Extension(vendorName = "datanucleus", key = "type-converter-name", value = "libphonenumber-rfc3966")
     Phonenumber.PhoneNumber rfc3966Phone;
 
-    public Sample(long id, Phonenumber.PhoneNumber internationalPhone, Phonenumber.PhoneNumber e164Phone, Phonenumber.PhoneNumber rfc3966Phone) {
+    @Persistent(defaultFetchGroup = "true")
+    @Extension(vendorName = "datanucleus", key = "type-converter-name", value = "libphonenumber-international")
+    Phonenumber.PhoneNumber otherPhone;
+
+    public Sample(long id, Phonenumber.PhoneNumber internationalPhone, Phonenumber.PhoneNumber e164Phone, Phonenumber.PhoneNumber rfc3966Phone, Phonenumber.PhoneNumber otherPhone) {
         this.id = id;
         this.internationalPhone = internationalPhone;
         this.e164Phone = e164Phone;
         this.rfc3966Phone = rfc3966Phone;
+        this.otherPhone = otherPhone;
     }
 
     public long getId() {
@@ -64,5 +69,9 @@ public class Sample {
 
     public Phonenumber.PhoneNumber getRfc3966Phone() {
         return rfc3966Phone;
+    }
+
+    public Phonenumber.PhoneNumber getOtherPhone() {
+        return otherPhone;
     }
 }
