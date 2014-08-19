@@ -23,6 +23,18 @@
     <artifactId>datanucleus-converter-libphonenumber</artifactId>
     <version>4.0.0-release-SNAPSHOT</version>
 
+    <contributors>
+        <contributor>
+            <name>Nicolas Caballero</name>
+            <url>https://github.com/nickcaballero</url>
+        </contributor>
+    </contributors>
+
+    <scm>
+        <url>https://github.com/nickcaballero/datanucleus-converter-libphonenumber</url>
+        <connection>scm:https://github.com/nickcaballero/datanucleus-converter-libphonenumber.git</connection>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>org.datanucleus</groupId>
