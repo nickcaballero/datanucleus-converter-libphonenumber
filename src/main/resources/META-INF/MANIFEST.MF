@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DataNucleus Converter for libphonenumber
+Bundle-SymbolicName: org.datanucleus.store.types.converters.libphonenumber;singleton:=true
+Bundle-Version: 4.0
+Bundle-Localization: plugin
+Bundle-Vendor: DataNucleus
+Require-Bundle: org.datanucleus
+Import-Package: com.google.i18n.phonenumbers;version="6.1"
