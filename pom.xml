@@ -19,9 +19,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.datanucleus</groupId>
-    <artifactId>datanucleus-converter-libphonenumber</artifactId>
-    <version>4.0.0-release-SNAPSHOT</version>
+    <groupId>com.idklabs</groupId>
+    <artifactId>datanucleus-libphonenumber</artifactId>
+    <version>1.0.0</version>
 
     <contributors>
         <contributor>
@@ -157,14 +157,14 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
                 <configuration>
-                    <descriptors>
-                        <descriptor>${basedir}/assembly.xml</descriptor>
-                    </descriptors>
+                    <archive>
+                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
